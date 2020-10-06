@@ -20,9 +20,16 @@ def score_input(test_name, test_score = 0, invalid_message="Invalid test score t
     :return: formmated string with test_name, and test_score
     :rtype String
     """
-    #print("{}: {}".format(test_name, test_score))
-    return "{}: {}".format(test_name, test_score)
-
+    try:
+        if 0 <= test_score <= 100:
+            return "{}: {}".format(test_name, test_score)
+        else:
+            return invalid_message
+    except TypeError:
+        raise TypeError
 
 if __name__ == '__main__':
-    print(score_input("morgan", 65))
+    try:
+        print(score_input("morgan", "sixty"))
+    except TypeError:
+        print("Not a valid score!")
