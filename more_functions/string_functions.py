@@ -7,9 +7,12 @@ module 6 - functions with parameters
 """
 
 
-def multiply_string(str, int):
-    pass
+def multiply_string(message, n):
+    """Function that prints out a message a set amount of times"""
+    return str(message)*n
 
 
 if __name__ == '__main__':
-    multiply_string('Python!', 3)
+    user_message = input("Enter a message")
+    user_number = int(input("How many times would you like it to repeat"))
+    print(multiply_string(user_message, user_number))
